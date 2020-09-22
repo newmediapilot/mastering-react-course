@@ -5,7 +5,7 @@ class Welcome extends Component {
     render() {
         return (
             <div className={`container ${styles.App}`} data-testid="Welcome">
-                Welcome component works!
+                Welcome works!
             </div>
         );
     }
