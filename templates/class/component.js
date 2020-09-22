@@ -3,9 +3,11 @@ import styles from './TemplateName.module.scss';
 
 class TemplateName extends Component {
     render() {
-        <div className={styles.TemplateName} data-testid="TemplateName">
-            TemplateName component works!
-        </div>
+        return (
+            <div className={styles.TemplateName} data-testid="TemplateName">
+                TemplateName component works!
+            </div>
+        );
     }
 }
 

@@ -3,9 +3,11 @@ import styles from './Auth.module.scss';
 
 class Auth extends Component {
     render() {
-        <div className={styles.Auth} data-testid="Auth">
-            Auth component works!
-        </div>
+        return (
+            <div className={styles.TemplateName} data-testid="TemplateName">
+                Auth component works!
+            </div>
+        );
     }
 }
 

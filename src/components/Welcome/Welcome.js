@@ -3,9 +3,11 @@ import styles from './Welcome.module.scss';
 
 class Welcome extends Component {
     render() {
-        <div className={styles.Welcome} data-testid="Welcome">
-            Welcome component works!
-        </div>
+        return (
+            <div className={`container ${styles.App}`} data-testid="Welcome">
+                Welcome component works!
+            </div>
+        );
     }
 }
 
