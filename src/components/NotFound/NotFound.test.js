@@ -1,14 +1,11 @@
+// templates/component/test.js
+
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import ReactDOM from 'react-dom';
 import NotFound from './NotFound';
 
-describe('<NotFound />', () => {
-  test('it should mount', () => {
-    render(<NotFound />);
-    
-    const notFound = screen.getByTestId('NotFound');
-
-    expect(notFound).toBeInTheDocument();
-  });
+it('It should mount', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<NotFound />, div);
+    ReactDOM.unmountComponentAtNode(div);
 });

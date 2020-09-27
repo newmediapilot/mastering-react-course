@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import styles from './NotFound.module.scss';
 
-const NotFound = () => (
-  <div className={styles.NotFound} data-testid="NotFound">
-    NotFound Component
-  </div>
-);
-
-NotFound.propTypes = {};
-
-NotFound.defaultProps = {};
+class NotFound extends Component {
+    render() {
+        return (
+            <div className={styles.NotFound} data-testid="NotFound">
+                NotFound component works!
+            </div>
+        );
+    }
+}
 
 export default NotFound;
