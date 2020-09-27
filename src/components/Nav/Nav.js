@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Nav.module.scss';
+import {Link} from "react-router-dom";
 
 class Nav extends Component {
     render() {
@@ -9,12 +10,10 @@ class Nav extends Component {
                 data-testid="Nav">
                 <h5 className="my-0 mr-md-auto font-weight-normal">Company name</h5>
                 <nav className="my-2 my-md-0 mr-md-3">
-                    <a className="p-2 text-dark" href="#">Features</a>
-                    <a className="p-2 text-dark" href="#">Enterprise</a>
-                    <a className="p-2 text-dark" href="#">Support</a>
-                    <a className="p-2 text-dark" href="#">Pricing</a>
+                    <Link className="p-2 text-dark" to="/login">login</Link>
+                    <Link className="p-2 text-dark" to="/welcome">welcome</Link>
                 </nav>
-                <a className="btn btn-outline-primary" href="#">Sign up</a>
+                <a className="btn btn-outline-primary" href="#">help</a>
             </div>
         );
     }
