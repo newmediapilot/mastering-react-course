@@ -12,6 +12,7 @@ const Nav = () => {
             <nav className="my-2 my-md-0 mr-md-3">
                 <Link className="p-2 text-dark" to={`/login`}>login</Link>
                 <Link className="p-2 text-dark" to={`${url}/welcome`}>welcome</Link>
+                <Link className="p-2 text-dark" to={`${url}/items`}>items</Link>
             </nav>
             <a className="btn btn-outline-primary" href="#">help</a>
         </div>
