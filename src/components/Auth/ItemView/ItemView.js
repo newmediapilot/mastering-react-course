@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styles from './ItemView.module.scss';
-import {Link, useParams, useRouteMatch, useHistory} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 
 const ItemView = () => {
     let {id} = useParams();
-    let {url} = useRouteMatch();
     let {goBack} = useHistory();
     return (
         <div className={`container ${styles.App}`} data-testid="ItemView">
@@ -12,7 +11,7 @@ const ItemView = () => {
                 ItemView component works! -> {id}
             </h1>
             <div>
-                <button onClick={()=>goBack()}>Back</button>
+                <button onClick={() => goBack()}>Back</button>
             </div>
         </div>
     );

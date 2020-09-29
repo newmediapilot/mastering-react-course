@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styles from './Auth.module.scss';
 import Welcome from "./Welcome/Welcome";
 import {useRouteMatch, Route, Switch, Redirect} from "react-router-dom";
@@ -8,7 +8,7 @@ import Items from "./Items/Items";
 import ItemView from "./ItemView/ItemView";
 
 const Auth = () => {
-    let {path, url} = useRouteMatch();
+    let {path} = useRouteMatch();
     return (
         <main className={styles.TemplateName} data-testid="TemplateName">
             <Nav/>
