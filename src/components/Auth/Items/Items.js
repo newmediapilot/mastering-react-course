@@ -7,10 +7,12 @@ const Items = () => {
     let {url} = useRouteMatch();
     let {items} = itemsFixtures;
 
+    console.log('useRouteMatch()', useRouteMatch());
+
     let renderItems = items.map((item) => {
         return (
-            <li>
-                <Link key={item.id} to={`${url}/view/${item.id}`}>{item.label}</Link>
+            <li key={item.id}>
+                <Link to={`${url}/${item.id}`}>{item.label}</Link>
             </li>
         )
     });

@@ -14,7 +14,7 @@ const Auth = () => {
             <Nav/>
             <Switch>
                 <Route path={`${path}/welcome`} component={Welcome}/>
-                <Route path={`${path}/items/:id`} component={ItemView}/>
+                <Route path={`${path}/items/:id`} component={(props)=><ItemView/>}/>
                 <Route path={`${path}/items`} component={Items}/>
                 <Route path={`${path}/not-found`} component={NotFound}/>
                 <Redirect to={`${path}/not-found`}/>
