@@ -4,6 +4,8 @@ import Welcome from "./Welcome/Welcome";
 import {useRouteMatch, Route, Switch, Redirect} from "react-router-dom";
 import Nav from "../Nav/Nav";
 import NotFound from "./NotFound/NotFound";
+import Items from "./Items/Items";
+import ItemView from "./ItemView/ItemView";
 
 const Auth = () => {
     let {path, url} = useRouteMatch();
@@ -12,6 +14,8 @@ const Auth = () => {
             <Nav/>
             <Switch>
                 <Route path={`${path}/welcome`} component={Welcome}/>
+                <Route path={`${path}/items/:id`} component={ItemView}/>
+                <Route path={`${path}/items`} component={Items}/>
                 <Route path={`${path}/not-found`} component={NotFound}/>
                 <Redirect to={`${path}/not-found`}/>
             </Switch>
