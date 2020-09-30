@@ -11,15 +11,26 @@ const Items = () => {
 
     let renderItems = items.map((item) => {
         return (
-            <li key={item.id}>
-                <Link to={`${url}/${item.id}`}>{item.label}</Link>
-            </li>
+            <tr key={item.id}>
+                <td><Link to={`${url}/${item.id}`}>{item.label}</Link></td>
+            </tr>
         )
     });
 
     return (
         <div className={`container ${styles.App}`} data-testid="Items">
-            <ul>{renderItems}</ul>
+            <div className="row col">
+                <div className="col">
+                    <table width="100%" className="table">
+                        <thead>
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                        </thead>
+                        <tbody>{renderItems}</tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 };
