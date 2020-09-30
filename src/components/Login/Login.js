@@ -3,11 +3,18 @@ import styles from './Login.module.scss';
 import {Link} from "react-router-dom";
 
 class Login extends Component {
+    handleSubmit = e => {
+        e.preventDefault();
+
+        // do things...
+        console.log('handleSubmit...');
+    };
+
     render() {
         return (
             <div className={`container ${styles.TemplateName}`} data-testid="Login">
                 <h1>Login</h1>
-                <form>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
                     <div className="form-group">
                         <label htmlFor="name">
                             Name
