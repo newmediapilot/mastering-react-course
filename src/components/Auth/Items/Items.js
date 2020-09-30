@@ -7,8 +7,6 @@ const Items = () => {
     let {url} = useRouteMatch();
     let {items} = itemsFixtures;
 
-    console.log('useRouteMatch()', useRouteMatch());
-
     let renderItems = items.map((item) => {
         return (
             <tr key={item.id}>
