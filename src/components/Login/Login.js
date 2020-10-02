@@ -1,8 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, createRef} from 'react';
 import styles from './Login.module.scss';
 import {Link} from "react-router-dom";
 
 class Login extends Component {
+
+    constructor() {
+        super();
+        this.nameRef = createRef()
+    }
+
+    componentDidMount() {
+        this.nameRef.current.focus();
+    }
+
     handleSubmit = e => {
         e.preventDefault();
 
@@ -19,7 +29,7 @@ class Login extends Component {
                         <label htmlFor="name">
                             Name
                         </label>
-                        <input className="form-control" id="name" type="text"/>
+                        <input ref={this.nameRef} className="form-control" id="name" type="text"/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">
