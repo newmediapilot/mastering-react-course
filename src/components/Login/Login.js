@@ -8,6 +8,9 @@ class Login extends Component {
         account: {
             username: '',
             password: ''
+        },
+        viewOpts: {
+            showPassword: false
         }
     };
 
@@ -28,9 +31,17 @@ class Login extends Component {
     };
 
     handleChange(e) {
-        const account = {...this.state.account};
-        account.username = e.currentTarget.value;
-        this.setState({account});
+        let state = {...this.state};
+        let {account} = state;
+        account[e.currentTarget.name] = e.currentTarget.value;
+        this.setState(state);
+    }
+
+    togglePassword() {
+        let state = {...this.state};
+        let {viewOpts} = state;
+        viewOpts.showPassword = !viewOpts.showPassword;
+        this.setState(state);
     }
 
     render() {
@@ -43,8 +54,8 @@ class Login extends Component {
                             Name
                         </label>
                         <input value={this.state.account.username}
-                               onChange={(e) => this.handleChange(e)}
-                               ref={this.nameRef}
+                               onChange={(e) => this.handleChange(e)} ref={this.nameRef}
+                               name="username"
                                className="form-control"
                                id="name" type="text"/>
                     </div>
@@ -52,12 +63,18 @@ class Login extends Component {
                         <label htmlFor="pass">
                             Password
                         </label>
-                        <input //value={this.state.account.password}
-                            className="form-control"
-                            id="pass" type="password"/>
+                        <input value={this.state.account.password}
+                               onChange={(e) => this.handleChange(e)}
+                               name="password"
+                               className="form-control"
+                               id="pass" type={(this.state.viewOpts.showPassword) ? "text" : "password"}/>
                     </div>
-                    <button className="btn btn-info" type="submit">Submit</button>
+                    <button className="btn btn-info mr-3" type="submit">Submit</button>
+
+                    <button className="btn btn-info" type="button" onClick={() => this.togglePassword()}>{(this.state.viewOpts.showPassword) ? "Hide" : "Show"} Password
+                    </button>
                 </form>
+                <hr/>
                 <Link to="./auth/welcome">Welcome</Link>
             </div>
         );
