@@ -4,9 +4,16 @@ import {Link} from "react-router-dom";
 
 class Login extends Component {
 
+    state = {
+        account: {
+            username: '',
+            password: ''
+        }
+    };
+
     constructor() {
         super();
-        this.nameRef = createRef()
+        this.nameRef = createRef();
     }
 
     componentDidMount() {
@@ -20,6 +27,12 @@ class Login extends Component {
         console.log('handleSubmit...');
     };
 
+    handleChange(e) {
+        const account = {...this.state.account};
+        account.username = e.currentTarget.value;
+        this.setState({account});
+    }
+
     render() {
         return (
             <div className={`container ${styles.TemplateName}`} data-testid="Login">
@@ -29,13 +42,19 @@ class Login extends Component {
                         <label htmlFor="name">
                             Name
                         </label>
-                        <input ref={this.nameRef} className="form-control" id="name" type="text"/>
+                        <input value={this.state.account.username}
+                               onChange={(e) => this.handleChange(e)}
+                               ref={this.nameRef}
+                               className="form-control"
+                               id="name" type="text"/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="pass">
                             Password
                         </label>
-                        <input className="form-control" id="pass" type="password"/>
+                        <input //value={this.state.account.password}
+                            className="form-control"
+                            id="pass" type="password"/>
                     </div>
                     <button className="btn btn-info" type="submit">Submit</button>
                 </form>
